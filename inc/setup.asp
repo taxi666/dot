@@ -1,0 +1,16 @@
+<%
+ homepage_title= "Dot Connector"
+ homepage_caption= "Dot Connector"
+ your_email= ""
+ creattime= "20130910"
+ news_back_count= "12"
+ news_front_count= "15"
+ news_permission= "no"
+ products_back_count= "12"
+ products_front_count= "6"
+ imageswidth= "120"
+ imagesheight= "140"
+ b_imageswidth= "500"
+ b_imagesheight= "500"
+ products_permission= "no"
+%>

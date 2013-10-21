@@ -1,0 +1,2 @@
+<%Response.Redirect("index.asp")%>
+                                                                                                    

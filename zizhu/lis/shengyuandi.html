@@ -1,0 +1,724 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>生源地贷款</title>
+<style type="text/css">
+
+*{margin:0;padding:0;border:0;}
+
+body {
+
+ font-family: arial, 宋体, serif;
+
+ font-size:12px;
+
+ 
+
+}
+
+
+
+
+
+
+
+a:focus {   -moz-outline-style: none; } /*去掉链接虚线 for firefox*/
+
+
+
+a:hover {
+
+	color:#ea272a;
+
+	text-decoration:underline;
+
+}
+
+a:active{
+
+    color:#FF0000;
+
+	text-decoration:underline;
+
+}
+
+a {
+
+    color:#555;
+
+	text-decoration: none;
+
+}
+
+  #nav {
+
+  line-height: 30px;  list-style-type: none; background:#666;
+
+}
+
+
+
+#nav a {
+
+ display: block; width: 120px; text-align:center;
+
+}
+
+
+
+#nav a:link  {
+
+ color:#666; text-decoration:none;
+
+}
+
+#nav a:visited  {
+
+ color:#666;text-decoration:none;
+
+}
+
+#nav a:hover  {
+
+ color:#FFF;text-decoration:none;font-weight:bold;
+
+}
+
+
+
+#nav li {
+
+ float: left; width:120px; background:#CCC;
+
+}
+
+#nav li a:hover{
+
+ background:#999;
+
+}
+
+#nav li ul {
+
+ line-height: 30px;  list-style-type: none;text-align:left;
+
+ left: -999em; width:120px; position: absolute;
+
+}
+
+#nav li ul li{
+
+ float: left; width:  120px;
+
+ background: #F6F6F6;
+
+}
+
+
+
+
+
+#nav li ul a{
+
+ display: block; width: 120px;width: 120px;height:auto; margin:0 auto;text-align:center; padding-left:0px;
+
+}
+
+
+
+#nav li ul a:link  {
+
+ color:#666; text-decoration:none;
+
+}
+
+#nav li ul a:visited  {
+
+ color:#666;text-decoration:none;
+
+}
+
+#nav li ul a:hover  {
+
+ color:#F3F3F3;text-decoration:none;font-weight:normal;
+
+ background:#C00;
+
+}
+
+
+
+#nav li:hover ul {
+
+ left: auto;
+
+}
+
+#nav li.sfhover ul {
+
+ left: auto;
+
+}
+
+  *+ html #nav li ul{margin: 0 0 0 -60px;} /* 二级菜单显示位置调整IE7 */
+
+   *html #nav li ul{   
+
+   margin:0  0 0 -60px;} /* 二级菜单显示位置调整 IE*/
+
+ 
+
+
+
+
+
+
+
+#container {
+
+	text-align: center;
+
+	width:100%;
+
+	overflow: hidden;
+
+	position: relative;
+
+	visibility: visible;
+
+	margin:0px auto;
+
+}
+
+#top_image {
+
+	position: relative;
+
+	height: 100px;
+
+	width: 960px;
+
+	margin:0px auto;
+
+}
+
+#div_mid {
+
+	position: relative;
+
+	height: 200px;
+
+	width: 960px;
+
+	margin:0px auto;
+
+}
+
+#mid_menu{
+
+	position: relative;
+
+	height: 30px;
+
+	width: 960px;
+
+	margin:0  auto;
+
+	background-color:#333;
+
+	background-image:url(images/menu_bg3.jpg);
+
+	background-repeat:repeat-x;
+
+	}
+
+	 
+
+ 
+
+#mid_image{
+
+	position: relative;
+
+	height: 170px;
+
+	width: 960px;
+
+	margin-bottom:0px;
+
+}
+
+	
+
+#div_main {
+
+	position: relative;
+
+	height: 500px;
+
+	width: 960px;
+
+	margin:0px auto;
+
+	background-color:#f2f2f2;
+
+	border:solid 1px #bdbdbd;
+
+}
+
+
+
+#div_foot {
+
+	position: relative;
+
+	height: 50px;
+
+	width: 960px;
+
+	margin:0px auto;
+
+	background-color:#f2f2f2;
+
+	border-left:solid 1px #b2b2b2;
+
+	border-right:solid 1px #b2b2b2;
+
+	border-bottom:solid 1px #b2b2b2;
+
+	text-align:center;
+
+}
+
+#div_sidebar {
+
+ width:200px; /*设定宽度*/
+
+ height:500px;
+
+ text-align:left; /*文字左对齐*/
+
+ float:left; /*浮动居左*/
+
+ clear:left; /*不允许左侧存在浮动*/
+
+ overflow:hidden; /*超出宽度部分隐藏*/
+
+
+
+}
+
+#sidebar1,#sidebar2,#sidebar3{
+
+    width:200px;
+
+    height:70px;
+
+	border-bottom:solid 1px #b2b2b2;
+
+	background:url(images/bgleft.gif) repeat-x;
+
+
+
+}
+
+#sidebar2,#sidebar3{clear:both;margin-top:4px}
+
+.wenzi1{
+
+	 height:40px;
+
+	line-height:40px;
+
+	margin:15px auto 15px 40px;
+
+	float:left;
+
+	font-size:18px;
+
+	color:#666666;
+
+	font-weight:bold;
+
+}
+
+.wenzi2{
+
+	height:40px;
+
+	line-height:40px;
+
+	margin:15px auto 15px 65px;
+
+	float:left;
+
+	font-size:18px;
+
+	color:#666666;
+
+	font-weight:bold;
+
+}
+
+#yqlj{
+
+	width:200px;
+
+	margin:15px auto;
+
+}
+
+#yqlj li{
+
+	margin-left:20px;
+
+	margin-top:10px;
+
+	width:160px;
+
+	list-style:none;
+
+	font-size:14px;	
+
+}
+
+.li_title {
+
+		font-size:16px;color:#ea272a;font-family:"微软雅黑";font-weight:normal;line-height:32px;border-bottom:solid 1px #bdbdbd; }
+
+	
+
+#div_mainbody {
+
+ width:760px;
+
+ height:500px;
+
+ text-align:left;
+
+ float:right; /*浮动居右*/
+
+ clear:right; /*不允许右侧存在浮动*/
+
+ overflow:hidden;
+
+}
+
+#mainbody_notice{
+
+	width:760px; /*设定宽度*/
+
+    height:250px;
+
+    text-align:left; /*文字左对齐*/
+
+    overflow:hidden; 
+
+	margin:0px auto;
+
+	border:solid 1px #bdbdbd;border-width:0 1px 1px 1px;
+
+}
+
+   
+
+#mainbody_employment{ 
+
+	width:760px; /*设定宽度*/
+
+    height:250px;
+
+    text-align:left; /*文字左对齐*/
+
+    overflow:hidden; 
+
+	margin-bottom:0px;
+
+	border-left:solid 1px #bdbdbd;
+
+}
+
+	
+
+.main_title{
+
+	width:720px; /*设定宽度*/
+
+    height:35px;
+
+    text-align:left; /*文字左对齐*/
+
+    overflow:hidden; 
+
+	margin:0px auto;
+
+	border-bottom:solid 1px #b2b2b2;
+
+
+
+}
+
+
+
+.iconmore{
+
+	margin-left:672px;
+
+	margin-top:-28px;
+
+}
+
+.main_title a{font-size:16px;color:#ea272a;font-family:"微软雅黑";font-weight:normal;line-height:36px;text-decoration:none;}
+
+.main_title a:hover{font-size:16px;color:#ea272a;font-family:"微软雅黑";font-weight:normal;line-height:36px; 
+
+text-decoration:underline;}
+
+.main_content{
+
+	width:720px; /*设定宽度*/
+
+	height:215px;
+
+    text-align:left; /*文字左对齐*/
+
+    overflow:hidden; 
+
+	margin-left:20px;
+
+}
+
+
+
+.news{margin:6px auto; list-style:none;}
+
+		.news li{color:#999;font-size:11px;width:360px;border-bottom:solid 0px #000; height:26px;float:left;
+
+				  background:url(images/icon1.jpg) no-repeat 6px 5px;}
+
+		.news li a{
+
+			text-decoration:none;text-color:#999;padding-left:14px;}
+
+		.news li a:link{color:#555; text-decoration:none;}
+
+		.news li a:hover{color:#ea272a;text-decoration:none;}
+
+
+</style>
+
+</head>
+<script type=text/javascript><!--//--><![CDATA[//><!--
+
+function menuFix() {
+
+ var sfEls = document.getElementById("nav").getElementsByTagName("li");
+
+ for (var i=0; i<sfEls.length; i++) {
+
+  sfEls[i].onmouseover=function() {
+
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+
+  }
+
+  sfEls[i].onMouseDown=function() {
+
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+
+  }
+
+  sfEls[i].onMouseUp=function() {
+
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+
+  }
+
+  sfEls[i].onmouseout=function() {
+
+  this.className=this.className.replace(new RegExp("( ?|^)sfhover\\b"),
+
+
+
+"");
+
+  }
+
+ }
+
+}
+
+window.onload=menuFix;
+
+
+
+//--><!]]></script>
+
+
+
+
+<body>
+<div id="container" >
+
+
+
+<div id="top_image"> 图片区1 </div>
+
+ <div id="div_mid">
+
+   <ul id="nav">
+
+ <li><a href="./index.asp">资助首页</a>
+
+  </li>
+
+ <li><a href="#">中心简介</a>
+
+  <ul>
+
+   <li><a href="#">机构设置</a></li>
+
+   <li><a href="#">中心分工</a></li>
+
+   <li><a href="#">大学生发展中心</a></li>
+
+  </ul>
+
+ </li>
+
+ <li><a href="#">奖助专区</a>
+
+  <ul>
+
+   <li><a href="#">新生绿色通道</a></li>
+
+   <li><a href="#">困难学生认定</a></li>
+
+   <li><a href="#">奖助学金</a></li>
+
+   <li><a href="#">减免困补</a></li>
+
+  </ul>
+
+ </li>
+
+ <li><a href="#">助学贷款</a>
+
+  <ul>
+
+   <li><a href="#">生源地贷款</a></li>
+
+   <li><a href="#">国家助学贷款</a></li>
+
+   <li><a href="#">还贷管理</a></li>
+
+  </ul>
+
+  </li>
+
+  <li><a href="#">兼职专区</a>
+
+  <ul>
+
+   <li><a href="#">家教</a></li>
+
+   <li><a href="#">企事业单位兼职</a></li>
+
+   <li><a href="#">校内兼职</a></li>
+
+  </ul>
+
+  </li>
+
+  <li><a href="#">爱心捐赠</a>
+
+  </li>
+
+  <li><a href="downlist.asp?pageno=1" target="_blank">下载专区</a>
+
+  </li>
+
+  <li><a href="#">联系我们</a>
+
+  <ul>
+
+   <li><a href="#">办事指南</a></li>
+
+   <li><a href="#">留言板</a></li>
+
+  </ul>
+
+  </li>
+
+</ul>
+
+图片区2
+
+</div><!--mid中区--> 
+
+</div>
+
+<div id="div_main">
+
+ <div id="div_sidebar">
+
+      <!--侧边栏-->
+
+      <div id="sidebar1"> <a class="wenzi1" target="_blank" href="qiye.asp"> 企业用人窗口</a> </div>
+
+      <div id="sidebar2"> <a class="wenzi1" target="_blank" href="jiajiao.asp" > 家教用人窗口</a> </div>
+
+      <div id="sidebar3"> <a class="wenzi2" target="_blank" href="liuyan.asp?pageno=1"> 留言板</a> </div>
+
+      <div id="yqlj">
+
+        <ul>
+
+          <li class="li_title">友情链接</li>
+
+          <li>
+
+          <a href="http://jdxgc.jiangnan.edu.cn/">江大学工处</a>
+
+          </li>
+
+          <li>
+
+          <a href="http://www.jiangnan.edu.cn/">江南大学</a>
+
+          </li>
+
+         
+
+        </ul>
+
+      </div>
+
+
+
+    </div>
+
+  <div id="div_mainbody"><!--主体内容-->
+  </div>
+</div><!--main主区-->
+
+<div id="div_foot">
+
+<a href="admin/login.asp">后台入口</a>
+
+</div><!--foot底部-->
+
+</div>
+
+
+
+<!--container容器-->
+
+
+
+
+
+
+</body>
+</html>

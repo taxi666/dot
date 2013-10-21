@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, em, img, button { margin: 0; padding: 0;border:0 none;}
+html {background-color: #FFF; }
+body {background-color: #FFF; font-size: 12px; line-height: 1.4em; font-family: 'Open Sans', sans-serif; color:rgb(28, 36, 41);}
+table {border-collapse: collapse; }
+a {color:rgb(28, 36, 41);text-decoration:none;outline:none;}
+a:hover {text-decoration:none; }
+h1, h2, h3, h4, h5 {font-size: 100%;  }
+ul li, ol li {list-style:none; }
+img {border: 0 none;}
+dfn {margin-right: 2px; font-style: normal; font-size: 12px; font-family: Arial !important; }
+.invisible { visibility: hidden !important; }
+.hidden { display: none !important; }
+.clearfix {*zoom:1;}
+.clearfix:after {display:block; height:0; content:'.'; clear:both; overflow:hidden;}
+
+/* Common Begin */
+.icon_tel,.icon_fax,.icon_email,.icon_site {display:inline-block; width:16px; height:16px;margin-right:3px; background-repeat:no-repeat;vertical-align:middle;}
+.icon_tel {background-image:url(img/icon_tel.jpg)}
+.icon_fax {background-image:url(img/icon_fax.jpg);}
+.icon_email {height:10px;background-image:url(img/icon_email.jpg);}
+.icon_site {background-image:url(img/icon_site.jpg);}
+
+
+/*fonts and color*/
+.font_2 {font:bold 27px/1.4em 'Open Sans', sans-serif;color: rgb(204, 10, 10);}
+.font_8 {font-size:13px;font-family:'Open Sans', sans-serif;color:rgb(28, 36, 41);}
+.font_9 {font-size:12px;font-family:'Open Sans', sans-serif;color:rgb(28, 36, 41);}
+.font_16 {font-size:16px;font-family:'Open Sans', sans-serif;color:rgb(28, 36, 41);}
+.color_18 {color:rgb(204, 10, 10);}
+/* Common End */
+
+/* Structure Begin */
+#base_hd {width:980px; margin:20px auto;margin-bottom:6px;}
+#base_bd,#base_bd2 {width:980px; margin:0px auto; padding:10px 0 20px; background-color:#F7F7F7;}
+#base_bd2 {margin-top:20px;background-color:#fff;}
+#base_ft {width:100%; height:128px; margin-bottom:50px; position:relative;}
+/* Structure End */
+
+/*=S about us*/
+.aboutus_content {padding:20px 0 20px 20px;overflow:hidden;*zoom:1;font-size:13px;}
+.aboutus_left {width:565px;margin-bottom:20px;float:left;font-size:13px;word-wrap:break-word;}
+.aboutus_right {float:right;}
+.aboutus_firstw {font-size:13px;color:rgb(204, 10, 10);}
+.aboutus_left p {margin-bottom:20px;}
+.aboutus_content h3 {margin-top:30px;}
+.industry_list {width:366px;margin-top:20px;padding-left:1.3em;margin-left:0.5em;line-height: normal;letter-spacing: normal;}
+.industry_list li {width:183px;float:left;list-style-type:disc;}
+/*=E about us*/
+
+/*=S products & services*/
+.p_side {width:170px;height:800px;float:left;padding:20px 0 0 45px;background:#E3E3E3;position:relative;}
+.p_side:hover {background:#D6D4CC;}
+.p_main {width:733px;float:left;padding:30px 0 20px 20px;font-size:13px;}
+.p_main_text {padding-left:10px;}
+.product_list li {padding: 8px 0 4px;border-bottom:1px solid #fff;list-style:disc inside;}
+.p_main h3 {padding:10px 0 20px;text-decoration:underline;font-size:13px;}
+.p_main h3 span {color:rgb(204, 10, 10);}
+.p_main p {width:705px;padding-bottom:20px;}
+.img_products01 {margin-bottom:6px;}
+.img_products02 {margin-bottom:20px;}
+/*=E products & services*/
+
+/*=S petrochemical*/
+.p_side2 {height:530px;}
+.p_main2 h2 {font-size:28px;margin-bottom:20px;}
+.p_main2 h4 {font-size:14px;color:#000;}
+.p_main2 h5 {font-size:12px;color:#000;}
+.p_main2 p {font-size:12px;}
+/*=E petrochemical*/
+
+/*=S working with us page*/
+.email_contact {font-size:13px;}
+.working_with_img {float:left;width:710px;clear:left;}
+.working_with_email {float:left;width:200px;padding:30px 0 0 30px;clear:right;color:rgb(113, 112, 112);font-size:14px;line-height:2;}
+.email_contact {width: 930px;padding-left:20px;}
+.email_address {color:rgb(204, 10, 10);text-decoration:underline;}
+.email_address span {font-size:14px;color:rgb(0, 136, 203);}
+.btn_joinus {display:block;width:150px;height:55px;margin:30px;border-radius:5px;transition:background-color 0.4s ease 0s;background: url(img/indented_bg.png) 0px 0px repeat-x rgb(214, 212, 204);cursor:pointer;font-size:28px;color:#fff;text-align:center;line-height:55px;box-shadow:rgba(0, 0, 0, 0.6) 0px 1px 4px 0px;}
+.btn_joinus:hover {background-color:rgb(136, 6, 6);}
+.industry_list2 {width:440px;}
+.industry_list2 li {width:220px;}
+.email_contact ul {padding-left:10px;}
+.email_contact li {list-style:disc inside;}
+/*=E working with us page*/
+
+/*=S contact us*/
+.img_contact {width:970px;height:324px;margin-left:5px;margin-top:-15px;margin-bottom:20px;}
+.contact_main {margin-bottom:50px;padding-left:25px;}
+.contact_main .p1 {margin-bottom:4px;}
+.contact_main .p2,.contact_main .p3,.contact_main .p4 {margin-bottom:20px;}
+.contact_main .p5 {margin-bottom:40px;}
+.contact_main label {display:block;font-size:13px;margin-bottom:4px;}
+.contact_main input[type="text"],.contact_main textarea {border:1px solid #ABADB3;margin-bottom:20px;font-size:13px;padding:1px;line-height:1.4em;}
+.contact_main textarea {width:923px;}
+.btn_send {display:block;width:60px;height:26px;margin-bottom:30px;border: 1px solid #ABADB3;border-radius:3px;font-size:14px;cursor:pointer;}
+/*=E contact us*/

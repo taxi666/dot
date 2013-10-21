@@ -1,0 +1,50 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image: url(../image/bg.jpg);
+}
+a:link {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 25px;
+	font-weight: lighter;
+	color: #333333;
+	text-decoration: none;
+}
+.kuang4 {
+	border: 1px solid #999999;
+}
+a:visited {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 25px;
+	font-weight: lighter;
+	color: #333333;
+	text-decoration: none;
+}
+a:hover {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 25px;
+	font-weight: lighter;
+	color: #FF6600;
+	text-decoration: underline;
+}
+a:active {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 25px;
+	font-weight: lighter;
+	color: #333333;
+	text-decoration: none;
+}
+.text14 {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 25px;
+	font-weight: lighter;
+	color: #333333;
+	text-decoration: none;
+}

@@ -1,0 +1,42 @@
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="936"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<%
+dim action
+action=request.querystring("action")
+if action="ck" then
+dim code
+code=request.form("code")
+if code = session("GetCode") then
+      response.write("<font color=green>验证码正确!</font>")
+else
+     response.write("<font color=red>验证码错误!</font>")
+end if
+end if
+%>
+</head>
+<body>
+<form method="post" name="form1" action="?action=ck">
+<input type="text" name="code">验证码:<img src="" id="iimg" /><a href="javascript:" onclick="ck();">看不清楚?换一个</a><br>
+<input type="submit" value="提交">
+</form>
+<script language="javascript">
+var codename="code.asp"; //验证码文件名
+function ck(){
+     var vid=Math.floor(Math.random() * 10);
+     if(form1.iimg.src==codename+"?id="+vid){
+      ck();
+     }
+     else{
+       form1.iimg.src=codename+"?id="+vid;
+     }
+}
+ck();
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,17 @@
+<%
+ homepage_title= "后台管理"
+ homepage_caption= "后台管理"
+ homepage_link= "http://"
+ your_email= ""
+ creattime= "20091014"
+ news_back_count= "12"
+ news_front_count= "999"
+ news_permission= "no"
+ products_back_count= "12"
+ products_front_count= "6"
+ imageswidth= "120"
+ imagesheight= "140"
+ b_imageswidth= "500"
+ b_imagesheight= "500"
+ products_permission= "no"
+%>

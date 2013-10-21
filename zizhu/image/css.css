@@ -1,0 +1,35 @@
+.text {
+	font-size: 12px;
+	line-height: 23px;
+	font-weight: lighter;
+	color: #660000;
+	text-decoration: none;
+}
+a:link {
+	font-size: 12px;
+	line-height: 23px;
+	font-weight: lighter;
+	color: #660000;
+	text-decoration: underline;
+}
+a:visited {
+	font-size: 12px;
+	line-height: 23px;
+	font-weight: lighter;
+	color: #660000;
+	text-decoration: underline;
+}
+a:hover {
+	font-size: 12px;
+	line-height: 23px;
+	font-weight: lighter;
+	color: #CC0099;
+	text-decoration: underline;
+}
+a:active {
+	font-size: 12px;
+	line-height: 23px;
+	font-weight: lighter;
+	color: #660000;
+	text-decoration: underline;
+}

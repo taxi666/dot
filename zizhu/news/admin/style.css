@@ -1,0 +1,35 @@
+@charset "gb2312";
+body {font:11px "Arial", "??им?";  padding:0px 0px 0px 0px; margin:0px 0px 0px 0px; background-color:#006699;
+scrollbar-face-color : #D8DBDF;
+scrollbar-highlight-color : #FFFFFF;
+scrollbar-shadow-color : #C1C6CC;
+scrollbar-3dlight-color : #ABB1B3;
+scrollbar-arrow-color : #7F8996;
+scrollbar-track-color : #F8FAF9;
+scrollbar-darkshadow-color : #ABB1B3
+}
+
+td {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; font-size: 11px}
+A {
+	COLOR: #000000;FONT: 11px verdana; TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #000000;FONT: 11px verdana; TEXT-DECORATION: none
+}
+.tdBody {
+	background-color: #DEE3ED;
+}
+.tdBody2 {
+	background-color: #E3E9F1;
+}
+
+.Standard-Input {
+    BORDER-RIGHT: #2FA70F 1px solid; BORDER-TOP: #2FA70F 1px solid; FONT-SIZE: 9pt; BORDER-LEFT: #2FA70F 1px solid; BORDER-BOTTOM: #2FA70F 1px solid; 
+	HEIGHT: 18px; BACKGROUND-COLOR: #ffffff;
+	FONT-FAMILY: Verdana,Helvetica,sans-serif; 
+}
+.Standard-TEXTAREA {
+    BORDER-RIGHT: #2FA70F 1px solid; BORDER-TOP: #2FA70F 1px solid; FONT-SIZE: 9pt; BORDER-LEFT: #2FA70F 1px solid; BORDER-BOTTOM: #2FA70F 1px solid; 
+	BACKGROUND-COLOR: #ffffff;
+	FONT-FAMILY: Verdana,Helvetica,sans-serif; 
+}

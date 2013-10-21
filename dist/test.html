@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">  
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Adding a Timepicker to jQuery UI Datepicker</title> 
+		<style type="text/css"> 
+			body,img,p,h1,h2,h3,h4,h5,h6,form,table,td,ul,ol,li,dl,dt,dd,pre,blockquote,fieldset,label{
+				margin:0;
+				padding:0;
+				border:0;
+			}
+			body{  border-top: solid 10px #7b94b2; font: 90% Arial, Helvetica, sans-serif; padding: 20px; }
+			pre{ font-size: 12px; line-height: 16px; padding: 5px 5px 5px 10px; margin: 10px 0; background-color: #e4f4d4; border-left: solid 5px #9EC45F; overflow: auto; tab-size: 4; -moz-tab-size: 4; -o-tab-size: 4; -webkit-tab-size: 4; }
+			#ui-datepicker-div, .ui-datepicker{ font-size: 85%; }	
+		</style> 
+		
+		<link rel="stylesheet" media="all" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		<link rel="stylesheet" media="all" type="text/css" href="jquery-ui-timepicker-addon.css" />		
+	</head> 
+	<body> 
+
+<!-- Examples
+<!-- ############################################################################# -->
+<div id="tp-examples" styles="display:block;">
+	<h3 id="basic_examples">Basic Initializations</h3>
+	<!-- ============= example -->
+	<div class="example-container">
+		<p>Add a simple datetimepicker to jQuery UI's datepicker</p>
+		<div>
+	 		<input type="text" name="basic_example_1" id="basic_example_1" value="" />
+		</div>					
+		<pre>
+		$('#basic_example_1').datetimepicker();
+		</pre>
+	</div>
+
+	<!-- ============= example -->
+	<div class="example-container">
+		<p>Add only a timepicker:</p>
+		<div>
+	 		<input type="text" name="basic_example_2" id="basic_example_2" value="" />
+		</div>					
+		<pre>
+		$('#basic_example_2').timepicker();
+		</pre>
+	</div>
+
+	<!-- ============= example -->
+	<div class="example-container">
+		<p>Format the time:</p>
+		<div>
+	 		<input type="text" name="basic_example_3" id="basic_example_3" value="" />
+		</div>					
+		<pre>
+		$('#basic_example_3').datetimepicker({
+			timeFormat: "hh:mm tt"
+		});
+		</pre>
+	</div>
+</div>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="jquery-ui-sliderAccess.js"></script>
+
+		<script type="text/javascript">			
+			$(function(){
+				alert($('#tabs').tabs());
+				$('.example-container > pre').each(function(i){
+					eval($(this).text());
+				});
+			});			
+		</script>
+	
+	 			
+	</body> 
+</html>

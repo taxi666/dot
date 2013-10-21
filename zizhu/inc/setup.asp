@@ -1,0 +1,16 @@
+<%
+ homepage_title= "江南大学资助中心"
+ homepage_caption= "资助中心"
+ your_email= ""
+ creattime= "20110510"
+ news_back_count= "12"
+ news_front_count= "15"
+ news_permission= "no"
+ products_back_count= "12"
+ products_front_count= "6"
+ imageswidth= "120"
+ imagesheight= "140"
+ b_imageswidth= "500"
+ b_imagesheight= "500"
+ products_permission= "no"
+%>
