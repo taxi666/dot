@@ -4,22 +4,21 @@
 <!--#include file="../../inc/SysLoginCheck.inc.asp" -->
 
 <%
-	dim rs,sql
-	set rs=server.createobject("adodb.recordset")
-	action = "addnew"
-	newsId = Trim(Request.QueryString("id"))
-	
-	if isNumeric(newsId)=false or newsId="" then
-		newsId=0
-		action = "addnew"
-	end if
-	
+dim rs,sql
+set rs=server.createobject("adodb.recordset")
+action = "modify"
+newsId = Trim(Request.QueryString("id"))
 
+if isNumeric(newsId)=false or newsId="" then
+	newsId=0
+	action = "addnew"
+end if
+
+if action="modify" then
 set rsp=Server.CreateObject("ADODB.RecordSet")
 sqlp = "select * FROM event where id="&newsId
-rsp.Open sqlp,conn,1,3
-	if rsp.RecordCount=1 then
-		action = "modify"   
+rsp.Open sqlp,conn,1,1
+	if rsp.RecordCount=1 then 
 		mTitle=rsp("eventTitle")
 		mTime=rsp("eventTime")
 		mDetail=rsp("eventDetail")		
@@ -29,6 +28,7 @@ rsp.Open sqlp,conn,1,3
 	end if
 rsp.Close
 set rsp=nothing
+end if
 
 sub produceForm()
 	mTitle=trim(request.form("event_title"))
@@ -37,19 +37,26 @@ sub produceForm()
 	sqlq = "select * from event where id="&Trim(Request.Form("id"))
 	set rsq = Server.CreateObject("ADODB.RecordSet")
 	rsq.Open sqlq,conn,1,3
+
+	if len(mTitle)>255 then
+		Response.Write("<Script Language='Javascript'>")
+		Response.Write("alert('标题文字太长!标题字符个数不能大于255，包含空格');")
+		Response.Write("history.go(-1);")
+		Response.Write("</Script>")
+	else 
+
         if Trim(Request.Form("action"))="modify" then
 			if rsq.RecordCount = 1 then
-			//修改
-				
+			'修改
 				rsq("eventTitle") = mTitle
 				rsq("eventTime") = mTime
 				rsq("eventDetail") = mDetail			
 				rsq.Update
-             end if 
-			 Response.Write("<Script Language='Javascript'>")
-			 Response.Write("alert('修改成功!');")
-			 Response.Write("</Script>")
-             Response.Write "<script language=javascript>"&_
+            end if 
+			Response.Write("<Script Language='Javascript'>")
+			Response.Write("alert('修改成功!');")
+			Response.Write("</Script>")
+            Response.Write "<script language=javascript>"&_
                             "window.location.href='list.asp'"&_
                             "</script>"                                     
 		else
@@ -63,6 +70,7 @@ sub produceForm()
 			Response.Write("alert('保存成功!');")
 			Response.Write("</Script>")	
 		end if
+	end if
 	rsq.Close
 	set rsq = nothing 
 end sub
@@ -121,10 +129,6 @@ function saveIt()
 	           		<textarea name="event_detail" cols="100" rows="6"> <%=mDetail%> </textarea>
 	          	</td>
 	          </tr>
-	          <%if news_permission ="yes" then%>
-	          <%end if%>
-	          
-	    
 	          <tr> 
 	            <td>&nbsp;</td>
 	            <td colspan="2"> 

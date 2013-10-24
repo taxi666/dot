@@ -159,20 +159,27 @@ else
             <div align="center"><%=rs("id")%></div>
           </td>
           <td height="22"><a href="detail.asp?id=<%=rs("id")%>" class="tt4 list_title" title="<%=rs("eventTitle")%>"> 
-            <% 
-			
-			if len(rs("eventTitle"))>40 then
-				response.write "<font style='word-break:break-all;'>"&left(rs("eventTitle"),40)&"....</font>"
+            <%			
+      			if len(rs("eventTitle"))>40 then
+      				response.write "<font style='word-break:break-all;'>"&left(rs("eventTitle"),40)&"....</font>"
             else
-				response.write "<font style='word-break:break-all;'>"&rs("eventTitle")&"</font>"
+      				response.write "<font style='word-break:break-all;'>"&rs("eventTitle")&"</font>"
             end if		
-			%>
+      			%>
             </a></td>
           <td height="22"> 
             <div align="center"><%=rs("eventTime")%></div>
           </td>
           <td height="22"> 
-            <div align="center"><%=rs("eventDetail")%></div>
+            <div align="center">
+               <%     
+            if len(rs("eventDetail"))>40 then
+              response.write "<font style='word-break:break-all;'>"&left(rs("eventDetail"),40)&"....</font>"
+            else
+              response.write "<font style='word-break:break-all;'>"&rs("eventDetail")&"</font>"
+            end if    
+            %>
+            </div>
           </td>
           <td height="22"> 
             <div align="center"><%=rs("createTime")%></div>

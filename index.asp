@@ -1,3 +1,4 @@
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="936"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,21 +95,36 @@
 		<dl class="dl_events">
 			<dt><h2>Up Coming Events</h2></dt>
 			<dd>
+				<!--#include file="dbconnect/conn.asp" -->
+				<%
+				dim rs,sql,pmcount
+				set rs=server.createobject("adodb.recordset")
+				sql="select top 3 * from event order by ID desc"
+				rs.open sql,conn,1,1
+				rcount=rs.recordcount
+				pmcount=3
+				if rs.bof and rs.eof then
+				else
+					loopno=pmcount
+					i=1
+					do while not rs.eof and loopno>0
+				%>				
 				<div class="coming_events">
-					<p class="event_time">DAY MON 00, 00:00 AM</p>
-					<p class="event_title">I'M AN EVENT  1</p>
-					<p class="event_detail">I'm an event detail 1</p>
+					<p class="event_time"><%=rs("eventTime")%></p>
+					<p class="event_title"><%=rs("eventTitle")%></p>
+					<p class="event_detail"><%=rs("eventDetail")%></p>
 				</div>
-				<div class="coming_events">
-					<p class="event_time">DAY MON 00, 00:00 AM</p>
-					<p class="event_title">I'M AN EVENT  2</p>
-					<p class="event_detail">I'm an event detail 2</p>
-				</div>
-				<div class="coming_events last">
-					<p class="event_time">DAY MON 00, 00:00 AM</p>
-					<p class="event_title">I'M AN EVENT  3</p>
-					<p class="event_detail">I'm an event detail 3</p>
-				</div>
+				<%
+				rs.movenext						
+				loopno=loopno-1
+				i=i+1
+				loop		
+				end if
+
+				rs.close
+				set rs=Nothing
+				endconnection
+				%>
 				<a href="###" class="more_info">More Info...</a>
 			</dd>
 		</dl>

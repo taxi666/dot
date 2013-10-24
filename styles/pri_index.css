@@ -70,7 +70,8 @@
 .news_area {padding-top:10px;position:relative;}
 .news_area p {width:193px;}
 .read_more {position:absolute;right:10px;font:normal normal normal 13px/1.4em 'Open Sans',sans-serif;color:rgb(204, 10, 10);white-space:nowrap;}
-.coming_events {min-width:200px;margin-top:10px;padding-bottom:10px;padding-left:8px;border-bottom:1px dotted rgb(170, 168, 168);}
+.coming_events {width:360px;margin-top:10px;padding-bottom:10px;margin-left:8px;border-bottom:1px dotted rgb(170, 168, 168);overflow:hidden;}
+.coming_events p {overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
 .coming_events .event_time {font:normal normal normal 16px/1.4em 'Open Sans',sans-serif;color:rgb(28, 36, 41);}
 .coming_events .event_title {font:normal normal bold 18px/1.4em 'Open Sans', sans-serif;color:rgb(204, 10, 10);}
 .coming_events .event_detail {font:normal normal normal 13px/1.4em 'Open Sans', sans-serif;color:rgb(28, 36, 41);}

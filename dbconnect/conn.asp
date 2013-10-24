@@ -15,7 +15,12 @@ next
 %>
 
 <%
-connstr = "DBQ=" + server.mappath("../db/dot01.asp") + ";DefaultDir=;DRIVER={Microsoft Access Driver (*.mdb)};"   
+connstr = "DBQ=" + server.mappath("db/dot01.asp") + ";DefaultDir=;DRIVER={Microsoft Access Driver (*.mdb)};"   
 set conn=server.createobject("adodb.connection")  
 conn.open connstr
+
+sub endConnection()
+	conn.close
+	set conn=nothing
+end sub		
 %>
