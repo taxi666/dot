@@ -4,8 +4,12 @@ dim menu(4,3),j,tmpmenu,menuname,menurl
 
 menu(0,0)="Event信息管理"
 menu(0,1)="<a href=event/list.asp target=mainFrame>Event列表</a>"
+menu(0,2)="<a href=event/add.asp target=mainFrame>添加Event</a>"
 menu(1,0)="留言信息管理"
 menu(1,1)="<a href=contact/list.asp target=mainFrame>留言列表</a>"
+menu(2,0)="job信息管理"
+menu(2,1)="<a href=job/list.asp target=mainFrame>job列表</a>"
+menu(2,2)="<a href=job/add.asp target=mainFrame>添加job</a>"
 
 sub showMenu()
     dim menuStr

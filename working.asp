@@ -56,62 +56,57 @@
 			<li>General Management Skills Training</li>
 			<li>Supply Chain</li>
 		</ul>
+		<!--#include file="dbconnect/conn.asp" -->
+		<%
+		dim rs,sql,pmcount
+		set rs=server.createobject("adodb.recordset")
+		sql="select top 3 * from job order by ID desc"
+		rs.open sql,conn,1,1
+		rcount=rs.recordcount
+		pmcount=3
+		if rs.bof and rs.eof then
+		else
+			loopno=pmcount
+			i=1
+			do while not rs.eof and loopno>0
+		%>
 		<hr>
 		<br/>
-		Conference Sales executive<br/>
-		This is a sales position that is responsible for promoting training/ conference services to prospective and existing customers. The key objective of this position is to generate new sales revenue for company in accordance to the sales targets set by the management.
-		<br/>
+		<%=rs("jobName")%><br/>
+		<%=rs("jobDescribe")%>
+		<br/><br/>
 		Job Responsibilities: 
 		<br/><br/>
 		<ul>
-			<li>Contact existing and prospective customers for effective sales presentations</li>
-			<li>Maintain long-term relationships with customers by providing quality customer service</li>
-			<li>Present knowledge and special features of product or service to customer during sales presentation</li>
-			<li>Prepare and submit regular sales report</li>
+			<%
+			job_re=Split(rs("jobResponsibilities"),"$$")
+			For j=0 to ubound(job_re)%>
+			<li><%=job_re(j)%></li>
+			<%Next %>
 		</ul>
 		<br/>
-		Requirements:
+		Job Requirements:
 		<ul>
-			<li>Bachelor degree or above; ideally in English, Business Administration, International Trade, etc</li>
-			<li>Excellent written and oral communication skills in English and Chinese</li>
-			<li>Responsible, trustworthy and efficient. Fresh Graduates are welcome</li>
-		</ul>
-		<hr>
-		Sponsorship Sales Position<br/>
-		Sponsorship Sales Position is the “Corporate Strategic Partner” to enhance the clients' performance in terms of the marketing and business development objectives. You are responsible to research, identify, maintain and develop the client base through continuous accumulation of business knowledge market awareness. 
-		<br/><br/>
-		Job Responsibilities:
-		<ul>
-			<li>Selling sponsorship for conferences and a variety of networking events</li>
-			<li>Delivery of the sponsorship revenue target and collaborate with sales& production teams</li>
-			<li>Provide customer services and coordinate before, at and after conferences</li>
-			<li>Manage and facilitate case negotiations</li>
+			<%
+			job_re=Split(rs("jobRequirements"),"$$")
+			For j=0 to ubound(job_re)%>
+			<li><%=job_re(j)%></li>
+			<%Next %>
 		</ul>
 		<br/>
-		Requirements:
-		<ul>
-			<li>Bachelor degree or above. Fluency in both written and spoken English, CET-6 or above</li>
-			<li>Proven 1-2 years sales experience, preferably in conference sponsorship sales</li>
-			<li>Strong presentation skills, business sense and logical thinking capability</li>
-			<li>Creative and structured approach to selling and sales package development</li>
-			<li>Proven ability to build relationships at senior levels</li>
-		</ul>
-		<hr>
-		Conference Producer<br/>
-		The Conference Producer will be responsible for the development of timely and relevant conferences in the marketplace.  This will encompass topic research, speaker acquisition, content development and event management. 
-		<br/><br/>
-		Job Responsibility:
-		<ul>
-			<li>Conduct market research to identify key industry trends and hot-button issues</li>
-			<li>Identify and recruit best-in-class speakers/ trainers, budgetary control & managing conferences on-site</li>
-		</ul>
-		<br/>
-		Requirements:
-		<ul>
-			<li>University graduate or above; ideally in Mechanical/ Chemical Engineering, Geoscience & Petroleum Engineering, Marketing, Mass Communication, Business Administration and etc</li>
-			<li>Excellent written and oral communication skills in English and Chinese</li>
-			<li>Responsible, organizational, efficient, independent, able to multitasking and meet deadline with good communication skill</li>
-		</ul>
+		<%
+		rs.movenext						
+		loopno=loopno-1
+		i=i+1
+		loop		
+		end if
+
+		rs.close
+		set rs=Nothing
+		endconnection
+		%>
+
+		
 		</div>
 	</div>
 </div>

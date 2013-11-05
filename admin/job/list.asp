@@ -16,7 +16,7 @@ dim rs,sql
 set rs=server.createobject("adodb.recordset")
 
 Function DelNews(idstr)
-	sqld = "select * from event where id="&idstr
+	sqld = "select * from job where id="&idstr
 	set rsd=Server.CreateObject("ADODB.RecordSet")
 	rsd.Open sqld,conn,1,3   
 	if not rsd.EOF then
@@ -95,7 +95,7 @@ function SelectCheckBox()
 <br>
 <table width="100%" border="0" align="center" cellspacing="3" cellpadding="3" bgcolor="#FFFFFF">
   <tr> 
-    <td colspan="2"><%=homepage_title%> - <font color="#FF0000">Event信息管理</font></td>
+    <td colspan="2"><%=homepage_title%> - <font color="#FF0000">job信息管理</font></td>
   </tr>
   <tr> 
     <td valign="top" nowrap> 
@@ -109,17 +109,14 @@ function SelectCheckBox()
           <td width="6%" height="20" bgcolor="#799AE1"> 
             <div align="center"><font color="#FFFFFF">ID</font></div>
           </td>
-          <td width="24%" height="20" bgcolor="#799AE1"> 
-            <div align="center"><font color="#FFFFFF">Event名称</font></div>
+          <td width="20%" height="20" bgcolor="#799AE1"> 
+            <div align="center"><font color="#FFFFFF">job名称</font></div>
           </td>
-          <td width="16%" height="20" bgcolor="#799AE1"> 
-            <div align="center"><font color="#FFFFFF">Event时间</font></div>
-          </td>
-          <td width="30%" height="20" bgcolor="#799AE1"> 
-            <div align="center"><font color="#FFFFFF">Event Detail</font></div>
+          <td width="50%" height="20" bgcolor="#799AE1"> 
+            <div align="center"><font color="#FFFFFF">简介</font></div>
           </td>
           <td width="14%" height="20"> 
-            <div align="center"><font color="#FFFFFF">添加时间</font></div>
+            <div align="center"><font color="#FFFFFF">创建时间</font></div>
           </td>
           <td width="6%"> 
             <div align="center"><font color="#FFFFFF">修改</font></div>
@@ -127,7 +124,7 @@ function SelectCheckBox()
         </tr>
 		<form name="delnews" action="del.asp" method="post">
         <%
-sql="select * from event order by ID desc"
+sql="select * from job order by ID desc"
 rs.open sql,conn,1,1
 rcount=rs.recordcount
 
@@ -158,25 +155,18 @@ else
           <td height="22"> 
             <div align="center"><%=rs("id")%></div>
           </td>
-          <td height="22"><a href="detail.asp?id=<%=rs("id")%>" class="tt4 list_title" title="<%=rs("eventTitle")%>"> 
-            <%			
-      			if len(rs("eventTitle"))>40 then
-      				response.write "<font style='word-break:break-all;'>"&left(rs("eventTitle"),40)&"....</font>"
-            else
-      				response.write "<font style='word-break:break-all;'>"&rs("eventTitle")&"</font>"
-            end if		
-      			%>
-            </a></td>
           <td height="22"> 
-            <div align="center"><%=rs("eventTime")%></div>
+            <div align="center">
+              <a href="detail.asp?id=<%=rs("id")%>" class="tt4 list_title" title="<%=rs("jobName")%>"><%=rs("jobName")%></a>
+            </div>
           </td>
           <td height="22"> 
             <div align="center">
                <%     
-            if len(rs("eventDetail"))>40 then
-              response.write "<font style='word-break:break-all;'>"&left(rs("eventDetail"),40)&"....</font>"
+            if len(rs("jobDescribe"))>80 then
+              response.write "<font style='word-break:break-all;'>"&left(rs("jobDescribe"),80)&"....</font>"
             else
-              response.write "<font style='word-break:break-all;'>"&rs("eventDetail")&"</font>"
+              response.write "<font style='word-break:break-all;'>"&rs("jobDescribe")&"</font>"
             end if    
             %>
             </div>

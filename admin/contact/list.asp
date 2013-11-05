@@ -121,9 +121,6 @@ function SelectCheckBox()
           <td width="18%" height="20"> 
             <div align="center"><font color="#FFFFFF">添加时间</font></div>
           </td>
-          <td width="6%"> 
-            <div align="center"><font color="#FFFFFF">修改</font></div>
-          </td>
         </tr>
 		<form name="delnews" action="del_liuyan.asp" method="post">
         <%
@@ -158,7 +155,7 @@ else
           <td height="22"> 
             <div align="center"><%=rs("id")%></div>
           </td>
-          <td height="22"><a href="#" class="tt4" title="<%=rs("yourName")%>"> 
+          <td height="22"><a href="detail.asp?id=<%=rs("id")%>" class="tt4" title="<%=rs("yourName")%>"> 
             <% 
 			
 			if len(rs("yourName"))>40 then
@@ -179,9 +176,6 @@ else
           <td height="22"> 
             <div align="center"><%=rs("createTime")%></div>
           </td>
-          <td> 
-            <div align='center'><a href="addlist.asp?newsid=<%=rs("id")%>" class="tt2">修改</a></div>
-          </td>
         </tr>
         <%
 		rs.movenext						
@@ -199,9 +193,9 @@ else
       <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:5px;">
         <form name="pageform" method=get action="list.asp">
           <tr>
-		    <td width="5%" height="25"> 
-              <div align="center">
-                <input type='checkbox' name='selectCheck' id=selectCheck onClick="SelectCheckBox()">
+		    <td width="3%" height="25"> 
+              <div align="right">
+                <input type='checkbox' name='selectCheck' id="selectCheck" onClick="SelectCheckBox()"/>
               </div>
             </td>
             <td width="16%">全部选中 <input name="delbtn" value=" 删 除 " type="button" class="button2" style="margin-left:20px;" onClick="cdel();"/></td>
