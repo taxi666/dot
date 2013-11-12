@@ -122,7 +122,7 @@ function SelectCheckBox()
             <div align="center"><font color="#FFFFFF">ÃÌº” ±º‰</font></div>
           </td>
         </tr>
-		<form name="delnews" action="del_liuyan.asp" method="post">
+		<form name="delnews" action="del.asp" method="post">
         <%
 sql="select * from contact order by ID desc"
 rs.open sql,conn,1,1

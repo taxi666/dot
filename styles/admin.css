@@ -57,3 +57,9 @@ font-size: 12px;
 
 a.return_list {float:right;padding:20px 100px;font-size:14px;}
 a.return_list:hover {text-decoration:underline;}
+
+/*job*/
+.job_list {position:relative;width:500px;}
+.count_buttons {position:absolute;margin-left:400px;}
+.base_plus,.base_minus {display:inline-block;width:22px;height:22px;background:url(img/plus2.png) no-repeat;}
+.base_minus {background:url(img/minus2.png) no-repeat;}

@@ -93,6 +93,17 @@ end if
 <!--
 function saveIt()
 {
+	var input1="",input2="";
+	var input_res = document.getElementsByClassName("input_text_res");
+	var input_req = document.getElementsByClassName("input_text_req");
+	input1=input_res[0].value;
+	for(var i=1;i<input_res.length;i++){
+		input1=input1+"$$"+input_res[i].value};
+	document.getElementById("input_responsibilities").value=input1;
+	input2=input_req[0].value;
+	for(var i=1;i<input_req.length;i++){
+		input2=input2+"$$"+input_req[i].value};
+	document.getElementById("input_requirements").value=input2;
     document.pub_topic.submit();
 }
 //-->
@@ -127,21 +138,47 @@ function saveIt()
 	              <div align="right">工作职责：</div>
 	          	</td>
 	           	<td colspan="2"> 
-	           		<textarea name="job_responsibilities" cols="100" rows="6"> <%=mResponsibilities%> </textarea>
+	           		<div class="job_list" id="div_job_list">
+						<div class="count_buttons">
+							<a href="javascript:;" class="base_plus" id="job_base_plus"></a>
+							<a href="javascript:;" class="base_minus" id="job_base_minus"></a>
+						</div>
+						<%
+						job_re=Split(mResponsibilities,"$$")
+						if ubound(job_re)>=0 then
+						For j=0 to ubound(job_re)%>
+						<div><input type="text" class="input_text_res" value=<%=job_re(j)%> size="50" /></div>
+						<%Next
+						else %>
+						<div><input type="text" class="input_text_res" size="50" /></div>
+						<%end if%>		
+					</div>
+	           		<input type="hidden" value="<%=mResponsibilities%>" name="job_responsibilities" id="input_responsibilities"/> 
 	          	</td>
 	          </tr>
 	           <tr> 
 	            <td valign="top" width="13%"> 
 	              <div align="right">应聘要求：</div>
 	          	</td>
-	           	<td colspan="2"> 
-	           		<textarea name="job_requirements" cols="100" rows="6"> <%=mRequirements%> </textarea>
+	           	<td colspan="2">
+		           	<div class="job_list" id="div_job_list2">
+						<div class="count_buttons">
+							<a href="javascript:;" class="base_plus" id="job_base_plus2"></a>
+							<a href="javascript:;" class="base_minus" id="job_base_minus2"></a>
+						</div>
+						<%
+						job_re=Split(mRequirements,"$$")
+						if ubound(job_re)>=0 then
+						For j=0 to ubound(job_re)%><div><input type="text" class="input_text_req" value=<%=job_re(j)%> size="50" /></div><%Next
+						else %><div><input type="text" class="input_text_req" size="50" /></div><%end if%>		
+					</div>
+	           		<input type="hidden" value="<%=mRequirements%>" name="job_requirements" id="input_requirements"/>  
 	          	</td>
 	          </tr>
 	          <tr> 
 	            <td>&nbsp;</td>
 	            <td colspan="2"> 
-	              <input type="button" name="post" value=" 发 表 " onClick="return saveIt();" ID="post" class="button2">
+	              <input type="button" name="post" value=" 发 表 " onClick="return saveIt();" ID="post" class="button2" href="javascript:;">
 	              <input type="hidden" name="id" value="<%=newsId%>">
 	              <input type="hidden" name="action" value="<%=action%>">
 	              <input type="reset" name="reset" value=" 重 置 " class="button2">
@@ -152,6 +189,50 @@ function saveIt()
       </tr>
     </table>
 </form>
-
+<script type="text/javascript">
+function addEvent(obj,type,fn){
+    if (obj.attachEvent) {
+        obj['e'+type+fn] = fn;
+        obj[type+fn] = function(){obj['e'+type+fn](window.event);}
+        obj.attachEvent('on'+type, obj[type+fn]);
+    } else
+        obj.addEventListener(type,fn,false);
+}
+function removeEvent(obj,type,fn){
+    if (obj.detachEvent){
+        obj.detachEvent('on'+type, obj[type+fn]);
+        obj[type+fn] = null;
+    } else
+        obj.removeEventListener(type,fn,false);
+}
+var job_list=document.getElementById("div_job_list");
+var job_list2=document.getElementById("div_job_list2");
+function clickPlus(){
+	var temp_node=document.createElement("div");
+	temp_node.innerHTML="<input type=text class=input_text_res size=50 />";
+	this.parentNode.parentNode.appendChild(temp_node);
+}
+function clickPlus2(){
+	var temp_node=document.createElement("div");
+	temp_node.innerHTML="<input type=text class=input_text_req size=50 />";
+	this.parentNode.parentNode.appendChild(temp_node);
+}
+function  clickMinus(){
+	var input_text_res=document.getElementsByClassName("input_text_res");
+	job_list.removeChild(input_text_res[input_text_res.length-1].parentNode);
+}
+function  clickMinus2(){
+	var input_text_req=document.getElementsByClassName("input_text_req");
+	job_list2.removeChild(input_text_req[input_text_req.length-1].parentNode);
+}
+var plus=document.getElementById("job_base_plus");
+addEvent(plus,"click",clickPlus);
+var minus=document.getElementById("job_base_minus");
+addEvent(minus,"click",clickMinus);
+plus2=document.getElementById("job_base_plus2");
+addEvent(plus2,"click",clickPlus2);
+minus2=document.getElementById("job_base_minus2");
+addEvent(minus2,"click",clickMinus2);
+</script>
 </body>
 </html>

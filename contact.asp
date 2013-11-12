@@ -9,6 +9,7 @@
 <link href="styles/pri_index.css" rel="stylesheet" type="text/css" />
 <link href="styles/pub.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+
 </head>
 <body>
 <div id="base_hd">
@@ -32,7 +33,7 @@
 	<div class="contact_main">
 		<p class="font_16 p1">Thank You for visiting our website. For any enquiry, please leave your message here.</p>
 		<p class="font_8 p2">Contact Us</p>
-		<form name="form_contact" method="post" action="admin/add_liuyan.asp">
+		<form name="form_contact" id="form_contact" method="post" action="admin/contact/add.asp">
 			<label for="your_name">Name:</label>
 			<input type="text" id="your_name" name="your_name" maxlength="50"/>
 			<label for="company_name">Company Name:</label>
@@ -45,6 +46,7 @@
 			<textarea id="enquiry" name="enquiry" cols="150" rows="6"></textarea>
 			<label for="Captha">Captha:</label>
 			<input type="text" id="captha" name="captha" maxlength="50"/>
+			<img src="admin/code01.asp" style="cursor:hand;" onclick="this.src='admin/code01.asp'" alt="看不清？换一张"/>
 			<input id="send_message" name="send_message" class="btn_send" type="submit" value="SEND"/>
 			<p class="font_16 p3">Dot Connector Business Consulting Services</p>
 			<p class="p4">Shanghai City:<br/>

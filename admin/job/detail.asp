@@ -50,11 +50,25 @@ set rsp=nothing
             </tr>
             <tr> 
               <th>职责</th>
-              <td><%=mResponsibilities%></td>
+              <td><%
+                  job_re=Split(mResponsibilities,"$$")
+                  if ubound(job_re)>=0 then
+                  For j=0 to ubound(job_re)%>
+                  <div><%=job_re(j)%>.</div><%Next
+                  end if
+                %></td>
             </tr>
             <tr> 
               <th>应聘要求</th>
-              <td><%=mRequirements%></td>
+              <td>
+                <%
+                  job_re=Split(mRequirements,"$$")
+                  if ubound(job_re)>=0 then
+                  For j=0 to ubound(job_re)%>
+                  <div><%=job_re(j)%>.</div><%Next
+                  end if
+                %>
+              </td>
             </tr>
             <tr> 
               <th>Event创建时间</th>

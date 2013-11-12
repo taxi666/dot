@@ -68,7 +68,7 @@ function IsValid()
 	}
 	if (document.mail.otherpwd.value=="")
 	{
-		alert("附加码不能为空");
+		alert("验证码不能为空");
 		document.mail.otherpwd.focus();
 		return false;
 	}
@@ -86,11 +86,21 @@ function IsValid()
 		password=trim(Request.Form("password"))
 		position = Trim(Request.form("postion"))
 		otherpwd = Trim(Request.form("otherpwd"))
-		reotherpwd = Trim(Request.form("reotherpwd"))
+		Function codepass()
+	       Dim CodeStr
+	       CodeStr = Trim(Request.form("otherpwd"))
+	       If CStr(Session("GetCode")) = CStr(CodeStr) And CodeStr <> "" Then
+	         codepass = True
+	         'Session("GetCode")=empty
+	       Else
+	         codepass = False
+	         'Session("GetCode")=empty
+	       End If
+		End Function
 		
 		a=checkenter()
 		If a=TRUE then
-			if otherpwd = reotherpwd then
+			if codepass() then
 				b=checksysUser()
 				if b=true then
 					if position <> 2 then 
@@ -124,7 +134,7 @@ function IsValid()
     <tr> 
       <td height="98">&nbsp;</td>
       <td valign="top"> 
-        <table class="text" cellspacing=0 cellpadding=0 width=247 border=0 align="center">
+        <table class="text" cellspacing=0 cellpadding=0 width=280 border=0 align="center">
           <tbody> 
           <tr> 
             <td height="28" style="line-height:180%"> 帐&nbsp;&nbsp;号： 
@@ -137,19 +147,11 @@ function IsValid()
             </td>
           </tr>
           <tr>
-            <td height="28" style="line-height:180%"> 附加码： 
-              <input type="text" name="otherpwd" size="20" class="button1">
-              <font face="Arial, Helvetica, sans-serif"> 
-              <%
-				dim temprnd
-				Randomize
-				temprnd=cstr(Int((9999 - 1000 + 1) * Rnd() + 1000))
-				response.Write (temprnd)
-			  %>
-              </font>
+            <td height="28" style="line-height:180%"> 验证码： 
+              <input type="text" name="otherpwd" size="20" class="button1"/>
+              <img src="code01.asp" style="cursor:hand;" onclick="this.src='code01.asp'" alt="看不清？换一张"/>
               <input type="hidden" name="action" value="true">
 			  <input type="hidden" name="postion" value="<%=postion%>">
-			  <input type="hidden" name="reotherpwd" value="<%=temprnd%>">
 			  </td>
           </tr>
           </tbody> 
@@ -167,7 +169,7 @@ function IsValid()
               </div>
             </td>
             <td> 
-              <input type=image height=23 width=62 src="images/btn_index_ok.gif" border=0 name=submit1>
+              <input type=image height=23 width=62 src="images/btn_index_ok.gif" border=0 name="submit1">
               <img onMouseOver="event.srcElement.style.cursor='hand'" onClick=cancel() height=23 src="images/btn_index_cancel.gif" width=62 border=0> </td>
           </tr>
         </table>
